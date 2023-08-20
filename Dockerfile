@@ -1,9 +1,9 @@
-FROM --platform=$BUILDPLATFORM golang:1.13-alpine as builder
+FROM --platform=$BUILDPLATFORM golang:1.18-alpine as builder
 
 ENV GO111MODULE=on
 
 RUN apk --no-cache add git libc-dev gcc
-RUN go get github.com/mjibson/esc
+RUN go install github.com/mjibson/esc@latest
 
 COPY . /go/src/github.com/mailslurper/mailslurper
 WORKDIR /go/src/github.com/mailslurper/mailslurper/cmd/mailslurper
