@@ -7,7 +7,7 @@ permissions:
   id-token: write
 
 env:
-  REPOSITORY: budiq-app/mailslurper
+  REPOSITORY: csc-app/mailslurper
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: arn:aws:iam::810496140366:role/github-budiq-app-mailslurper
+          role-to-assume: arn:aws:iam::810496140366:role/github-csc-app-mailslurper
           aws-region: eu-central-1
 
       - name: Set up Docker Buildx
