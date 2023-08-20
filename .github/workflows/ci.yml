@@ -46,7 +46,7 @@ jobs:
       - name: Build docker
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        run: docker buildx build ./Dockerfile
+        run: docker buildx build .
             --build-arg ENVIRONMENT=staging 
             --build-arg TOLGEE_DOWNLOAD_API_KEY=${{ secrets.TOLGEE_DOWNLOAD_API_KEY }} 
             --cache-from type=local,src=/tmp/.buildx-cache 
