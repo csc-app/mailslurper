@@ -53,7 +53,7 @@ jobs:
             --cache-to type=local,dest=/tmp/.buildx-cache-new 
             --tag ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ github.sha }} 
             --tag ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ steps.extract_branch.outputs.branch }}
-            --tag ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ steps.extract_branch.outputs.branch == 'main' && 'latest' || 'do-not-use' }}
+            --tag ${{ env.REGISTRY }}/${{ env.REPOSITORY }}:${{ steps.extract_branch.outputs.branch == 'master' && 'latest' || 'do-not-use' }}
             --platform linux/amd64,linux/arm64
             --push
 
